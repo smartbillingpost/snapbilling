@@ -1,50 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 export default function GetStarted() {
-  console.log("GET STARTED PAGE LOADED");
-
-  const [form, setForm] = useState({
-    business: "",
-    name: "",
-    phone: "",
-    email: "",
-    plan: "Starter",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("SUBMIT CLICKED");
-
-    try {
-      const res = await fetch(
-        "https://smartbilling-backend-production.up.railway.app/api/leads",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
-      );
-
-      if (!res.ok) throw new Error("Submit failed");
-
-      alert("Thanks! Our team will contact you shortly.");
-
-      setForm({
-        business: "",
-        name: "",
-        phone: "",
-        email: "",
-        plan: "Starter",
-      });
-    } catch (err) {
-      alert("Something went wrong. Please try again later.");
-      console.error(err);
-    }
-  };
+  const [params] = useSearchParams();
+  const planFromUrl = params.get("plan") || "Starter";
 
   return (
     <div className="bg-slate-50">
@@ -80,29 +39,34 @@ export default function GetStarted() {
           />
         </section>
 
-        {/* Form + Plans */}
+        {/* Form */}
         <section className="mt-20 grid gap-10 lg:grid-cols-2">
 
-          {/* Contact Form */}
           <div className="rounded-2xl border border-slate-200 bg-white p-8">
             <h2 className="text-2xl font-semibold text-slate-900">
               Tell Us About You
             </h2>
 
-            <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-              <Input label="Business / Firm Name" name="business" value={form.business} onChange={handleChange} />
-              <Input label="Your Name" name="name" value={form.name} onChange={handleChange} />
-              <Input label="Phone Number" name="phone" value={form.phone} onChange={handleChange} />
-              <Input label="Email Address" name="email" value={form.email} onChange={handleChange} />
+            <form
+              className="mt-6 space-y-4"
+              action="https://formspree.io/f/xjgebnbp"
+              method="POST"
+            >
+              {/* Auto captured plan */}
+              <input type="hidden" name="plan" value={planFromUrl} />
+
+              <Input label="Business / Firm Name" name="business" />
+              <Input label="Your Name" name="name" />
+              <Input label="Phone Number" name="phone" />
+              <Input label="Email Address" name="email" type="email" />
 
               <div>
                 <label className="block text-sm font-medium text-slate-700">
                   Interested Plan
                 </label>
                 <select
-                  name="plan"
-                  value={form.plan}
-                  onChange={handleChange}
+                  name="selectedPlan"
+                  defaultValue={planFromUrl}
                   className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
                 >
                   <option>Starter</option>
@@ -110,6 +74,12 @@ export default function GetStarted() {
                   <option>Enterprise</option>
                 </select>
               </div>
+
+              <textarea
+                name="message"
+                placeholder="Tell us about your business"
+                className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+              />
 
               <button
                 type="submit"
@@ -137,15 +107,15 @@ function Step({ title, desc }) {
   );
 }
 
-function Input({ label, name, value, onChange }) {
+function Input({ label, name, type = "text" }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-slate-700">{label}</label>
+      <label className="block text-sm font-medium text-slate-700">
+        {label}
+      </label>
       <input
-        type="text"
+        type={type}
         name={name}
-        value={value}
-        onChange={onChange}
         required
         className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
       />
