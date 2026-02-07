@@ -13,7 +13,7 @@ export default function Home() {
 
         <meta
           name="description"
-          content="SmartBilling is a simple billing and GST app for retail shops, distributors, and small businesses in India. Manage billing, expenses, GST, and business reports easily."
+          content="SmartBilling is an offline simple billing and GST app for retail shops, distributors, and small businesses in India. Manage billing, expenses, GST, and business reports easily."
         />
 
         <meta
