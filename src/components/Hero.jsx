@@ -7,14 +7,16 @@ export default function Hero() {
         <div className="max-w-3xl">
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            Smart Billing A Complete Business Solution just at your Fingertips
-          </h1>
+  SmartBilling – A Simple Billing and GST App for Businesses
+</h1>
+
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
   Billing, expenses, compliance, and business reports — all made simple.
-  SmartBilling helps you manage your day-to-day business easily,
+  SmartBilling helps you manage your day-to-day business easily and smartly,
   while keeping GST, e-Way Bills, and financial statements ready when needed.
 </p>
+
 
           <div className="mt-8 flex flex-wrap gap-4">
             {/* Primary CTA */}

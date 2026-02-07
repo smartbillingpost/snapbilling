@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>
-          SmartBilling – Simple Billing and GST App for Small Businesses
+          SmartBilling – Simple offline Billing and GST App for Small Businesses
         </title>
 
         <meta
