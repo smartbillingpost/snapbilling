@@ -13,7 +13,7 @@ export default function Hero() {
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed">
   Billing, expenses, compliance, and business reports — all made simple.
-  SmartBilling helps you manage your day-to-day business easily and smartly,
+  SnapBilling helps you manage your day-to-day business easily and smartly,
   while keeping GST, e-Way Bills, and financial statements ready when needed.
 </p>
 

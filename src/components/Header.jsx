@@ -23,7 +23,7 @@ export default function Header() {
               className="h-9 w-9 rounded-md object-contain"
             />
             <span className="text-lg font-semibold tracking-tight text-slate-900">
-              SmartBilling
+              SnapBilling
             </span>
           </NavLink>
 

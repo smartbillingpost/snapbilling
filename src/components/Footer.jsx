@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 border-t border-slate-800 pt-4 text-center text-xs text-slate-500">
-          © {year} SmartBilling. All rights reserved.
+          © {year} SnapBilling. All rights reserved.
         </div>
 
       </div>
