@@ -20,7 +20,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="text-lg font-semibold text-white">
-              SmartBilling
+              SnapBilling
             </div>
             <p className="mt-3 max-w-sm text-slate-400 leading-relaxed">
               Billing, GST compliance, GSTR reconciliation and
@@ -48,10 +48,10 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-slate-400 text-xs">
               <div>
-                smartbillingpost@gmail.com
+                snapbillingpost@gmail.com
               </div>
               <div>
-                smartbilling365@gmail.com
+                smartbillingpost@gmail.com
               </div>
               <div>
                 7990024608, 7048504990

@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="max-w-3xl">
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-  SmartBilling – A Simple Billing and GST App for Businesses
+  SnapBilling – A Simple Billing and GST App for Businesses
 </h1>
 
 
