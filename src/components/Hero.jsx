@@ -6,6 +6,32 @@ const WA_LINK  = "https://wa.me/917990024608?text=Hi%2C%20I%20would%20like%20a%2
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-white">
+
+      {/* ── Flashing Promo Banner ──────────────────────────── */}
+      <style>{`
+        @keyframes flash-border {
+          0%, 100% { box-shadow: 0 0 0 2px #f97316, 0 0 16px 2px #fbbf2488; }
+          50%       { box-shadow: 0 0 0 2px #ef4444, 0 0 28px 6px #ef444466; }
+        }
+        @keyframes pulse-text {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0.75; }
+        }
+        @keyframes wiggle {
+          0%, 100% { transform: rotate(-1deg); }
+          50%       { transform: rotate(1deg); }
+        }
+        .promo-banner {
+          animation: flash-border 1.2s ease-in-out infinite;
+        }
+        .promo-badge {
+          animation: wiggle 1.5s ease-in-out infinite;
+        }
+        .promo-cta {
+          animation: pulse-text 1.2s ease-in-out infinite;
+        }
+      `}</style>
+
       <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
@@ -33,8 +59,34 @@ export default function Hero() {
               invoices, track expenses, and manage GST — even without internet.
             </p>
 
+            {/* 🔥 Flashing Promo Box */}
+            <div className="promo-banner mt-7 flex items-center justify-between gap-4
+                            rounded-2xl border-2 border-orange-400
+                            bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50
+                            px-5 py-4">
+              <div className="flex items-center gap-3">
+                <span className="promo-badge text-2xl select-none">🎉</span>
+                <div>
+                  <p className="text-sm font-extrabold text-orange-700 leading-tight">
+                    Enjoy FREE Trial for 3 Months!
+                  </p>
+                  <p className="text-xs text-orange-500 font-medium mt-0.5">
+                    ⏳ Limited-time offer — closes soon
+                  </p>
+                </div>
+              </div>
+              <NavLink
+                to="/get-started"
+                className="promo-cta flex-shrink-0 rounded-xl bg-orange-500 px-4 py-2
+                           text-xs font-bold text-white shadow-md
+                           transition hover:bg-orange-600 hover:shadow-lg"
+              >
+                Register Now →
+              </NavLink>
+            </div>
+
             {/* ✅ Three CTAs: Download APK + WhatsApp + Enquire */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
 
               {/* Primary: Download APK */}
               <a

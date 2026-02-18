@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/snapbilling_logo.jpeg";
+//import logo from "../assets/snapbilling_logo.jpeg";
+import logo from "../assets/logo.png";
+
 
 const APK_LINK = "https://drive.google.com/file/d/1uRTkUelqwJtLRdDbmiySEIZmCGUNFcwC/view?usp=drive_link";
 
