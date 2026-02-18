@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/snapbilling_logo.jpeg";
 
+const APK_LINK = "https://drive.google.com/file/d/1uRTkUelqwJtLRdDbmiySEIZmCGUNFcwC/view?usp=drive_link";
 const year = new Date().getFullYear();
 
 export default function Footer() {
@@ -19,13 +21,32 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="text-lg font-semibold text-white">
-              SnapBilling
+            {/* ✅ Added: logo in footer */}
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                src={logo}
+                alt="SnapBilling logo"
+                className="h-8 w-8 rounded-md object-contain"
+              />
+              <div className="text-lg font-semibold text-white">
+                SnapBilling
+              </div>
             </div>
-            <p className="mt-3 max-w-sm text-slate-400 leading-relaxed">
+            <p className="max-w-sm text-slate-400 leading-relaxed">
               Billing, GST compliance, GSTR reconciliation and
               business intelligence for Indian MSMEs.
             </p>
+            {/* ✅ Added: Download APK button in footer */}
+            <a
+              href={APK_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-indigo-600
+                         px-4 py-2 text-xs font-semibold text-white
+                         transition hover:bg-indigo-700"
+            >
+              ⬇ Download APK Free (v1.0 · 6.1 MB)
+            </a>
           </div>
 
           {/* Navigation */}
@@ -34,10 +55,10 @@ export default function Footer() {
               Product
             </div>
             <div className="flex flex-col space-y-2">
-              <NavLink to="/product" className={linkClass}>Product</NavLink>
-              <NavLink to="/pricing" className={linkClass}>Pricing</NavLink>
-              <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-              <NavLink to="/privacy" className={linkClass}>Privacy</NavLink>
+              <NavLink to="/product"  className={linkClass}>Features</NavLink>
+              <NavLink to="/pricing"  className={linkClass}>Pricing</NavLink>
+              <NavLink to="/contact"  className={linkClass}>Contact</NavLink>
+              <NavLink to="/privacy"  className={linkClass}>Privacy Policy</NavLink>
             </div>
           </div>
 
@@ -48,16 +69,32 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-slate-400 text-xs">
               <div>
-                snapbillingpost@gmail.com
+                <a href="mailto:snapbillingpost@gmail.com"
+                   className="hover:text-white transition-colors">
+                  snapbillingpost@gmail.com
+                </a>
               </div>
               <div>
-                smartbillingpost@gmail.com
+                <a href="mailto:smartbillingpost@gmail.com"
+                   className="hover:text-white transition-colors">
+                  smartbillingpost@gmail.com
+                </a>
               </div>
+              {/* ✅ Added: WhatsApp link */}
               <div>
-                7990024608, 7048504990
+                <a
+                  href="https://wa.me/917990024608"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  WhatsApp: +91 79900 24608
+                </a>
               </div>
+              <div>+91 70485 04990</div>
+              {/* ✅ Fixed encoding: â€¢ → • */}
               <div className="pt-2 text-slate-500">
-                GST-ready • Built for MSMEs • India
+                GST-ready • Built for MSMEs • India 🇮🇳
               </div>
             </div>
           </div>
@@ -65,8 +102,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
+        {/* ✅ Fixed encoding: Â© → © */}
         <div className="mt-10 border-t border-slate-800 pt-4 text-center text-xs text-slate-500">
-          © {year} SnapBilling. All rights reserved.
+          © {year} SnapBilling. All rights reserved. Made with ❤️ in India.
         </div>
 
       </div>

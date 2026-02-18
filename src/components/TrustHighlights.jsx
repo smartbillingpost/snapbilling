@@ -3,7 +3,8 @@ const highlights = [
     title: "Works Offline & Stays Private",
     desc: (
       <>
-        SmartBilling works even without internet.
+        {/* ✅ Fixed brand name: was "SmartBilling" */}
+        SnapBilling works even without internet.
         Your data is <strong>not shared with anyone</strong> and
         stays completely under your control.
       </>
@@ -11,11 +12,11 @@ const highlights = [
     icon: "🔒",
   },
   {
-    title: "Your Data, Your Control",
+    title: "Your Data, Your Device",
     desc: (
       <>
         Your business data stays <strong>on your device</strong>.
-        No forced cloud storage. No third-party access.
+        No forced cloud storage. No third-party access. No surprises.
       </>
     ),
     icon: "💾",
@@ -36,7 +37,8 @@ const highlights = [
     desc: (
       <>
         Clean screens and guided steps make
-        daily billing and tracking easy from day one.
+        daily billing and tracking easy from day one —
+        no training required.
       </>
     ),
     icon: "⚡",
@@ -45,9 +47,10 @@ const highlights = [
     title: "Ready When Compliance Is Needed",
     desc: (
       <>
-        Prepare GST reports and upload required 
-        files using your regular business data,
-        without extra work.
+        {/* ✅ Fixed encoding: â€" removed */}
+        Prepare GST reports and upload required
+        files using your regular billing data —
+        without any extra effort.
       </>
     ),
     icon: "📑",
@@ -56,9 +59,10 @@ const highlights = [
     title: "Designed Around Real Businesses",
     desc: (
       <>
+        {/* ✅ Fixed encoding: â€" removed */}
         Built for billing, compliance, reports,
-        and control — the things businesses
-        actually care about.
+        and control — the things Indian small
+        businesses actually care about.
       </>
     ),
     icon: "🏢",
@@ -72,9 +76,14 @@ export default function TrustHighlights() {
 
         {/* Section intro */}
         <div className="mb-14 text-center">
+          {/* ✅ Added: section label */}
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-indigo-600">
+            Why SnapBilling
+          </p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900">
             Simple. Safe. In Your Control.
           </h2>
+          {/* ✅ Fixed encoding: â€" removed */}
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             Built for Indian businesses that want clarity,
             confidence, and control — without complexity.
@@ -82,20 +91,22 @@ export default function TrustHighlights() {
         </div>
 
         {/* Highlight cards */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {highlights.map((item, i) => (
             <div
               key={i}
               className="group rounded-2xl border border-slate-200 bg-white p-6
-                         transition hover:-translate-y-1 hover:shadow-md"
+                         transition duration-200 hover:-translate-y-1 hover:shadow-md
+                         hover:border-indigo-200"
             >
               {/* Icon */}
-              <div className="mb-4 text-3xl">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center
+                              rounded-xl bg-indigo-50 text-2xl">
                 {item.icon}
               </div>
 
               {/* Title */}
-              <h3 className="mb-2 text-lg font-semibold text-slate-900">
+              <h3 className="mb-2 text-base font-semibold text-slate-900">
                 {item.title}
               </h3>
 
